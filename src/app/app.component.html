@@ -1,0 +1,72 @@
+<section>
+    <header aria-label="header" role="banner" >
+      <nav class="ui attached menu" role="menubar">
+          <!-- <span class="red header item">{{title}}</span> -->
+          <a href="/">
+            <picture class="ui inverted logo image item">
+              <img src="logo" alt="{{title}}" height="35" width="35">
+            </picture>
+          </a>
+
+          <menu class="left menu" type="list" role="menu">
+                <menuitem class="item" label="Home" role="menuitem" routerLinkActive="active" routerLink="dashboard">Home</menuitem>
+                <menuitem class="item" label="profile" role="menuitem" routerLinkActive="active" routerLink="profile">Profile</menuitem>
+          </menu>
+
+          <div class="ui typehead search item">
+            <form class="ui transparent icon input" role="search">
+              <input class="prompt" type="text" placeholder="Search...">
+              <i class="search link icon"></i>
+            </form>
+            <!-- <section class="results"></section> -->
+          </div>
+
+          <menu class="right menu" role="menu">
+            <menuitem class="item" role="menuitem" label="Sign Up">
+                Sign Up
+            </menuitem>
+          </menu>
+      </nav>
+    </header>
+
+  <main role="main">
+    <router-outlet hidden></router-outlet>
+  </main>
+
+  <!-- Signup modal -->
+<dialog class="ui modal">
+  <i class="close icon"></i>
+  <header class="header">
+    Signup
+  </header>
+  <article class="content">
+    <picture class="ui medium image">
+      <img src="/images/avatar/large/chris.jpg">
+    </picture>
+    <section class="description">
+      <header class="ui header">We've auto-chosen a profile image for you.</header>
+      <p>We've grabbed the following image from the <a href="https://www.gravatar.com" target="_blank">gravatar</a> image associated with your registered e-mail address.</p>
+      <p>Is it okay to use this photo?</p>
+    </section>
+  </article>
+  <footer class="actions">
+    <button class="ui black deny button">
+      Nope
+    </button>
+    <button class="ui positive right labeled icon button">
+      Yep, that's me
+      <i class="checkmark icon"></i>
+    </button>
+  </footer>
+</dialog>
+
+  <footer role="contentinfo">
+    <code>
+      From Express: {{observable$ | async | json}}
+    </code>
+  </footer>
+
+<!-- Development tools -->
+<!-- <ngrx-store-log-monitor toggleCommand="ctrl-h" positionCommand="ctrl-m"></ngrx-store-log-monitor> -->
+
+</section>

@@ -1,0 +1,69 @@
+  <header class="ui attached inverted menu">
+    <span class="item">Dashboard component</span>
+
+    <nav>
+      <menu class="left menu">
+        <menuitem class="item"><a>Link 1</a></menuitem>
+        <menuitem class="item"><a>Link 2</a></menuitem>
+      </menu>
+    </nav>
+
+    <div class="right menu" role="menu">
+      <div class="ui action input">
+        <input type="text" placeholder="Enter post..">
+        <button class="ui button">Post</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- <h2>Dashboard component</h2> -->
+
+<div>
+
+  <form class="ui inverted form" [formGroup]="form" [ngClass]="{'error': form.errors && (form.dirty || form.touched), 'loading': loading}" (ngSubmit)="submitFeed()" role="form">
+    <!-- <label class="field" [ngClass]="{'error': form.get('name').errors && (form.get('name').dirty || form.get('name').touched)}">
+      <input placeholder="Enter name..." type="text" formControlName="name" required/>
+    </label> -->
+    <label class="field" [ngClass]="{'error': form.get('text').errors && (form.get('text').dirty || form.get('text').touched)}">
+      <textarea rows="2" formControlName="text" placeholder="Enter text..." required autofocus></textarea>
+    </label>
+    <button id="statusbox-submit" name="submit" type="submit" [disabled]="!form.valid" class="ui positive basic button" (click)="submitFeed()">
+      <i class="icon edit"></i> Add Activity
+    </button>
+  </form>
+
+  <!-- <span class="ui horizontal divider">OR</span> -->
+  <hr class="ui divider" role="decorative">
+
+  <section class="ui feed" role="log">
+    <header>
+      <h3>Feed</h3>
+    </header>
+    <article class="event" *ngFor="let item of feeds$ | async">
+      <picture class="spaced image label">
+        <!-- <img src="{{item.author.avartar}}"> -->
+        <img src="http://semantic-ui.com/images/avatar/small/stevie.jpg">
+      </picture>
+      <section class="content">
+        <div class="summary">
+          <a href="">{{item.name}}</a>
+          <time class="date" datetime="2016-10-03T19:00">
+            4 days ago
+          </time>
+        </div>
+        <p class="extra text">
+          {{item.text}}
+        </p>
+        <div class="meta">
+          <button class="ui positive basic button">
+            <i class="like icon"></i> 1 Like
+          </button>
+          <button class="ui negative basic button" (click)="removeFeed(item.id)">
+             <i class="delete icon"></i> Delete
+          </button>
+        </div>
+      </section>
+    </article>
+  </section>
+
+</div>
