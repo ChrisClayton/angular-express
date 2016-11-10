@@ -1,5 +1,5 @@
 <section>
-    <header aria-label="header" role="banner" >
+    <header aria-label="header" role="banner">
       <nav class="ui attached menu" role="menubar">
           <!-- <span class="red header item">{{title}}</span> -->
           <a href="/">
@@ -22,7 +22,7 @@
           </div>
 
           <menu class="right menu" role="menu">
-            <menuitem class="item" role="menuitem" label="Sign Up">
+            <menuitem class="button item" role="menuitem" label="Sign Up">
                 Sign Up
             </menuitem>
           </menu>
@@ -34,11 +34,16 @@
   </main>
 
   <!-- Signup modal -->
+  
 <dialog class="ui modal">
   <i class="close icon"></i>
-  <header class="header">
-    Signup
-  </header>
+  <nav>
+    <ul class="ui steps">
+      <li class="step"><a href="index.html">Register</a></li>
+      <li class="step"><a href="/about/">Profile Details</a></li>
+      <li class="active step"><a href="/about/">Profile Picture</a></li>
+    </ul>
+  </nav>
   <article class="content">
     <picture class="ui medium image">
       <img src="/images/avatar/large/chris.jpg">

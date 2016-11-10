@@ -17,7 +17,7 @@ export class DashboardComponent {
   feeds$: Observable<{}>;
 
   constructor(public fb: FormBuilder, public store: Store<{}>) {
-
+    this.loading = false;
     // this.feeds = {};
     this.feeds$ = store.select('feed');
 

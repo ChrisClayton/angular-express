@@ -1,3 +1,6 @@
+:host {
+    display:block;
+}
 menu {
     padding: 0em;
 }

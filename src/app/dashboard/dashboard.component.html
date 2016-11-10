@@ -1,39 +1,27 @@
-  <header class="ui attached inverted menu">
-    <span class="item">Dashboard component</span>
+<header class="ui attached inverted menu">
+  <span class="item">Dashboard component</span>
 
-    <nav>
-      <menu class="left menu">
-        <menuitem class="item"><a>Link 1</a></menuitem>
-        <menuitem class="item"><a>Link 2</a></menuitem>
-      </menu>
-    </nav>
+  <nav>
+    <menu class="left menu">
+      <menuitem class="item"><a>Link 1</a></menuitem>
+      <menuitem class="item"><a>Link 2</a></menuitem>
+    </menu>
+  </nav>
 
-    <div class="right menu" role="menu">
-      <div class="ui action input">
-        <input type="text" placeholder="Enter post..">
-        <button class="ui button">Post</button>
-      </div>
-    </div>
-  </header>
+  <div class="right menu" role="menu">
+    <form class="ui action input form" [formGroup]="form" [ngClass]="{'error': form.errors && (form.dirty || form.touched), 'loading': loading}" (ngSubmit)="submitFeed()" role="form">
+      <textarea class="field" rows="1" type="text" placeholder="Enter post.." formControlName="text" required autofocus></textarea>
+      <button class="ui button" id="statusbox-submit" name="submit" type="submit" [disabled]="!form.valid" class="ui positive basic button" (click)="submitFeed()">Post</button>
+    </form>
+  </div>
+</header>
 
   <!-- <h2>Dashboard component</h2> -->
 
-<div>
-
-  <form class="ui inverted form" [formGroup]="form" [ngClass]="{'error': form.errors && (form.dirty || form.touched), 'loading': loading}" (ngSubmit)="submitFeed()" role="form">
-    <!-- <label class="field" [ngClass]="{'error': form.get('name').errors && (form.get('name').dirty || form.get('name').touched)}">
-      <input placeholder="Enter name..." type="text" formControlName="name" required/>
-    </label> -->
-    <label class="field" [ngClass]="{'error': form.get('text').errors && (form.get('text').dirty || form.get('text').touched)}">
-      <textarea rows="2" formControlName="text" placeholder="Enter text..." required autofocus></textarea>
-    </label>
-    <button id="statusbox-submit" name="submit" type="submit" [disabled]="!form.valid" class="ui positive basic button" (click)="submitFeed()">
-      <i class="icon edit"></i> Add Activity
-    </button>
-  </form>
+<div class="ui basic segment container">
 
   <!-- <span class="ui horizontal divider">OR</span> -->
-  <hr class="ui divider" role="decorative">
+  <!-- <hr class="ui divider" role="decorative"> -->
 
   <section class="ui feed" role="log">
     <header>
