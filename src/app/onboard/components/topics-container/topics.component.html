@@ -1,0 +1,22 @@
+<header class="silver attached menu">
+  <h2 class="header">get Started</h2>
+
+  <button class="right floated button" 
+         [class.disabled]="!validSelect()" 
+         (click)="signupBtnClick()">
+      {{selectedNum}}
+  </button>
+</header>
+
+<div class="basic segment">
+  <section 
+    class="three column" 
+    [class.grid]="isGrid" 
+    [class.stackable]="isGrid && isStackable">
+      <topics-topic 
+        class="column"
+        *ngFor="let topic of topics; let i = index; trackBy: trackByFn" 
+        [tid]="topic.id" 
+        (onSelect)="handleSelected($event)">{{topic.name}}</topics-topic>
+  </section>
+</div>

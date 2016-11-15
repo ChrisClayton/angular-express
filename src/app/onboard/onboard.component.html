@@ -1,0 +1,15 @@
+<div class="bottom attached pushable segment">
+    <onboard-explainer class="left vertical sidebar" [class.visible]="!showSignup"></onboard-explainer>
+
+    <div class="pusher" [class.dimmed]="showSignup" style="width:80%;">
+
+        <topics-container 
+            isGrid="true" 
+            isStackable="true" 
+            (onButtonClick)="showSignupPanel()">
+        </topics-container>
+        
+    </div>
+
+  <signup-panel class="right vertical sidebar" [class.visible]="showSignup"></signup-panel>
+</div>

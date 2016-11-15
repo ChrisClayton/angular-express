@@ -1,0 +1,10 @@
+<div>
+    <input type="checkbox" 
+           attr.id="{topic-{{tid}}}" 
+           [(ngModel)]="selected" 
+           (change)="select({id: tid, selected: false})">
+    <label
+        attr.for="{topic-{{tid}}}">
+        <span><ng-content></ng-content></span>
+    </label>
+</div>
