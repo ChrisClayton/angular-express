@@ -1,7 +1,9 @@
 <div class="bottom attached pushable segment">
-    <onboard-explainer class="left vertical sidebar" [class.visible]="!showSignup"></onboard-explainer>
+    <onboard-explainer class="left very wide vertical push sidebar" 
+       [class.visible]="!showSignup"></onboard-explainer>
 
-    <div class="pusher" [class.dimmed]="showSignup" style="width:80%;">
+    <div class="pusher" 
+       [class.dimmed]="showSignup">
 
         <topics-container 
             isGrid="true" 
@@ -11,5 +13,6 @@
         
     </div>
 
-  <signup-panel class="right vertical sidebar" [class.visible]="showSignup"></signup-panel>
+  <signup-panel class="right very wide vertical push sidebar" 
+               [class.visible]="showSignup"></signup-panel>
 </div>

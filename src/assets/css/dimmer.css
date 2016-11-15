@@ -1,6 +1,5 @@
 /*!
- * # Semantic UI 2.2.6 - Dimmer
- * http://github.com/semantic-org/semantic-ui/
+ * # Dimmer
  *
  *
  * Released under the MIT license
@@ -184,14 +183,3 @@ body.dimmable > .dimmer {
 .dimmed.dimmable > .ui.simple.inverted.dimmer {
   background-color: rgba(255, 255, 255, 0.85);
 }
-
-
-/*******************************
-         Theme Overrides
-*******************************/
-
-
-
-/*******************************
-        User Overrides
-*******************************/

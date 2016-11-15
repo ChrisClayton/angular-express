@@ -31,7 +31,7 @@ export class TopicsComponent {
     }
     signupBtnClick() {
         if(this.selectedNum < 3) {
-            console.log("you need 3!");
+            alert("you need 3 interests!");
             return;
         }
         this.showSignup = (this.showSignup) ? false : true;
@@ -39,19 +39,13 @@ export class TopicsComponent {
     }
 
     handleSelected(evt) {
-        // console.log(evt);
         if(!evt.selected) {
             let index = this.selected.indexOf(evt);
             this.selected.splice(index, 1);
             this.selectedNum--;
-            console.log("removed");
         } else {
             this.selected.push(evt);
             this.selectedNum++;
-            console.log("added");
         }
-
-        console.log(this.selectedNum);
-        console.log(this.selected);
     }
 }
